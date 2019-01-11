@@ -1,0 +1,41 @@
+{
+  "group": "redirect_uri Request Parameter",
+  "usage": {
+    "return_type": [
+      "I"
+   	],
+    "register": true
+  },
+  "desc": "Reject registration where a redirect_uri is on plain http",
+  "reference": "https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthRequest",
+  "assert": {
+    "verify-error-response": {
+      "error": [
+        "invalid_request",
+        "invalid_configuration_parameter",
+        "invalid_redirect_uri"
+      ]
+    }
+  },
+  "MTI": [
+    "DYN"
+  ],
+  "sequence": [
+    {
+      "Webfinger": {
+        "set_webfinger_resource": null
+      }
+    },
+    {
+      "Discovery": {
+        "set_discovery_issuer": null
+      }
+    },
+    {
+      "Registration": {
+        "redirect_uris_with_scheme": "http",
+        "expect_exception": "RegistrationError"
+      }
+    }
+  ]
+}

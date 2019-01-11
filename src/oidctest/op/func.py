@@ -482,7 +482,7 @@ def redirect_uris_with_scheme(oper, args):
     """
     oper.req_args['redirect_uris'] = [
         r.replace('https', args) for r in
-        oper.conv.entity.registration_info['redirect_uris'][0]]
+        oper.conv.entity.registration_info['redirect_uris']]
 
 
 def redirect_uris_with_fragment(oper, kwargs):
