@@ -1,3 +1,10 @@
+02/15/2019
+- OP: Handle http 401 response with or without response body.
+- OP: Fix comparison of types in check_support
+- Added new docker configuration for running integration tests locally.
+- Update to pyoidc 0.15.1
+- Release OP 2.2.1 and RP 1.1.7
+
 01/18/2019
 - OP: Added checks to make sure that a mutually supported token endpoint auth method is used. #142
 - OP: Added a try-except to prevent abrupt failures when response code is unexpected. Issue #7.
