@@ -291,7 +291,7 @@ def make_test_desc(flow_dir, done, checks, funcs, profile=""):
         res = all_tests(flow_dir)
 
     tt = list(res.keys())
-    tt.sort()
+    tt.sort(key=lambda y: y.lower())
     test_desc = []
 
     for t in tt:
